@@ -1,0 +1,33 @@
+services:
+  # Frontend React service
+  frontend:
+    build:
+      context: ./frontend  # The build context (where the Dockerfile is located)
+      dockerfile: Dockerfile  # Specify the name of the Dockerfile (optional, if it's named Dockerfile)
+    ports:
+      - "8080:80"  # Map port 8080 on the host to port 80 in the container
+    networks:
+      - weather-network  # Optional: define a network if you're running multiple services
+    container_name: react-app-container  # Optional: name your container (default is auto-generated)
+    command: /bin/sh -c "echo 'React app is running on http://localhost:8080' && nginx -g 'daemon off;'"
+  
+  # Backend Flask API service
+  backend:
+    build:
+      context: ./backend  # Path to the backend directory
+      dockerfile: Dockerfile  # Specify the Dockerfile for backend
+    ports:
+      - "5000:5000"  # Expose Flask app on port 5000
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - ./backend:/app  # Mount backend directory for live code changes
+    networks:
+      - weather-network
+
+networks:
+  weather-network:
+    driver: bridge
+
+volumes:
+  postgres_data:

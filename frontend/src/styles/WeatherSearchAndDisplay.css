@@ -1,0 +1,165 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8; /* Light background for contrast */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
+    align-items: flex-start; /* Align items to the top (so the header doesn't clip) */
+    min-height: 100vh; /* Make sure the body takes full height */
+}
+
+/* Weather Search and Weather Data Containers */
+.weather-search-container,
+.weather-display-container {
+    max-width: 500px; /* Limit the maximum width for better readability */
+    margin: 20px auto; /* Center the container horizontally */
+    padding: 20px;
+    background-color: #ffffff; /* White background for cards */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center elements vertically */
+    align-items: center; /* Center elements horizontally */
+}
+
+/* Weather Search Title */
+.weather-search-title,
+.weather-display-title {
+    text-align: center; /* Ensures the text is centered */
+    color: #007BFF; /* Bootstrap primary color */
+    margin-bottom: 20px; /* Space below the title */
+    font-size: 1.5rem; /* Responsive font size */
+}
+
+/* Weather Search Form */
+.weather-search-form {
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically */
+    gap: 10px; /* Space between input fields */
+    width: 100%; /* Ensure the form takes full width of the container */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column; /* Stack label and input */
+}
+
+.weather-input {
+    padding: 10px;
+    border: 1px solid #ccc; /* Light border for inputs */
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%; /* Full width inputs */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between; /* Space out buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.search-button,
+.clear-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    flex: 1; /* Allow buttons to grow equally */
+    min-width: 120px; /* Minimum width for buttons */
+}
+
+.search-button {
+    background-color: #007BFF; /* Primary color */
+    color: white;
+}
+
+.clear-button {
+    background-color: #6c757d; /* Secondary color */
+    color: white;
+}
+
+.search-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.clear-button:hover {
+    background-color: #5a6268; /* Darker shade on hover */
+}
+
+/* Weather Data Display */
+.weather-details {
+    margin-top: 20px; /* Space above details */
+    text-align: center; /* Center the weather data */
+}
+
+.weather-info p {
+    margin: 5px 0; /* Space between info paragraphs */
+}
+
+.weather-info strong {
+    font-weight: bold; /* Bold for labels */
+}
+
+/* Error and No Data Messages */
+.error-message {
+    color: red; /* Error text color */
+    text-align: center;
+    margin-bottom: 15px; /* Space below error message */
+}
+
+.no-data-message {
+    color: #555; /* Subtle color for no data */
+    text-align: center;
+    font-style: italic; /* Italic style for emphasis */
+}
+
+@media (max-width: 600px) {
+    .weather-search-title,
+    .weather-display-title {
+        font-size: 1.25rem; 
+    }
+
+    .weather-input {
+        font-size: 0.9rem;
+    }
+
+    .search-button,
+    .clear-button {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .weather-search-container,
+    .weather-display-container {
+        max-width: 400px;
+        margin: 10px auto; 
+    }
+}
+
+@media (max-width: 400px) {
+    .weather-search-title,
+    .weather-display-title {
+        font-size: 1rem;
+    }
+
+    .weather-input {
+        font-size: 0.7rem;
+    }
+
+    .search-button,
+    .clear-button {
+        padding: 5px;
+        font-size: 0.7rem;
+    }
+
+    .weather-search-container,
+    .weather-display-container {
+        max-width: 250px;
+        margin: 10px auto; 
+    }
+}
