@@ -2,6 +2,7 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f0f4f8; /* Light background for contrast */
+    color: #000; /* Add this line for default text color */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
     display: flex;
@@ -54,6 +55,8 @@ body {
     font-size: 1rem;
     width: 100%; /* Full width inputs */
     box-sizing: border-box; /* Include padding in width */
+    background-color: #ffffff;
+    color: #000;
 }
 
 .button-group {
